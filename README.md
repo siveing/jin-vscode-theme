@@ -30,10 +30,12 @@ code --install-extension siveing.jin-cute-theme
 
 ## Recommended settings (optional)
 
-The theme is designed for a thin pink line cursor that glides and pulses, faint dots in the indentation, and a pink line joining the brackets around the cursor. To get that look, add these to your `settings.json`:
+The screenshots use [Fira Code](https://github.com/tonsky/FiraCode) with ligatures. The theme is designed for a thin pink line cursor that glides and pulses, faint dots in the indentation, and a pink line joining the brackets around the cursor. To get that look, add these to your `settings.json`:
 
 ```json
 {
+  "editor.fontFamily": "'Fira Code', Menlo, monospace",
+  "editor.fontLigatures": true,
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
   "editor.cursorBlinking": "expand",

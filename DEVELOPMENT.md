@@ -55,14 +55,7 @@ The personal shortcuts and cursor settings are a separate extension:
 npm run install-tools
 ```
 
-It adds:
-
-| Mac | Windows/Linux | What it does |
-| --- | --- | --- |
-| Cmd+R | Ctrl+R | **Go to Function**: lists only the functions, methods and constructors in the current file. Type to filter, ↑/↓ to preview, Enter to jump, Esc to go back. |
-| Cmd+I | Ctrl+I | **Go to Implementation** for the symbol under the cursor. |
-
-It also sets these defaults: a thin line cursor that glides (`cursorSmoothCaretAnimation`) and pulses (`cursorBlinking: "expand"`), smooth scrolling, indentation as faint dots (`renderWhitespace: "boundary"`) and bracket pair guide lines. In TypeScript and JavaScript, an arrow function stored in a `const` counts as a variable, so Go to Function doesn't list it.
+It adds Sublime Text style shortcuts (Cmd+R function list, Cmd+I implementation or definition, duplicate/delete/move lines, multi-cursor keys and more) and editor defaults (Fira Code with ligatures, a gliding and pulsing line cursor, dotted indentation, bracket guide lines). The full list is in `extras/jin-cute-tools/README.md`.
 
 If `npm` fails with `EACCES` inside `~/.npm`, some cache files belong to root (usually from an old `sudo npm`). Fix it once with:
 

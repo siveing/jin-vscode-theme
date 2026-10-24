@@ -1,8 +1,8 @@
 {
   "name": "jin-cute-tools",
   "displayName": "Jin Cute Tools",
-  "description": "Personal companion to Jin Cute Theme: Sublime-style Cmd+R / Cmd+I and animated cursor settings. Installed locally, not published.",
-  "version": "0.1.0",
+  "description": "Personal companion to Jin Cute Theme: Sublime Text style shortcuts, Fira Code and animated cursor settings. Installed locally, not published.",
+  "version": "0.2.0",
   "publisher": "local",
   "private": true,
   "engines": {
@@ -19,6 +19,11 @@
         "command": "jinCute.goToFunction",
         "title": "Go to Function in File",
         "category": "Jin Cute"
+      },
+      {
+        "command": "jinCute.goToImplementation",
+        "title": "Go to Implementation or Definition",
+        "category": "Jin Cute"
       }
     ],
     "keybindings": [
@@ -29,13 +34,136 @@
         "when": "editorTextFocus"
       },
       {
-        "command": "editor.action.goToImplementation",
+        "command": "workbench.action.showAllSymbols",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      },
+      {
+        "command": "jinCute.goToImplementation",
         "key": "ctrl+i",
         "mac": "cmd+i",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "editor.action.revealDefinition",
+        "key": "f12",
+        "mac": "cmd+alt+down",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+      },
+      {
+        "command": "editor.action.selectHighlights",
+        "key": "alt+f3",
+        "mac": "cmd+ctrl+g",
+        "when": "editorFocus"
+      },
+      {
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "editor.action.insertCursorAbove",
+        "key": "ctrl+alt+up",
+        "mac": "ctrl+shift+up",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "editor.action.insertCursorBelow",
+        "key": "ctrl+alt+down",
+        "mac": "ctrl+shift+down",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "editor.action.smartSelect.expand",
+        "key": "ctrl+shift+space",
+        "mac": "cmd+shift+space",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "editor.action.copyLinesDownAction",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "editor.action.deleteLines",
+        "key": "ctrl+shift+k",
+        "mac": "ctrl+shift+k",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "command": "editor.action.moveLinesUpAction",
+        "key": "ctrl+shift+up",
+        "mac": "cmd+ctrl+up",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "editor.action.moveLinesDownAction",
+        "key": "ctrl+shift+down",
+        "mac": "cmd+ctrl+down",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "editor.action.joinLines",
+        "key": "ctrl+j",
+        "mac": "cmd+j",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "editor.action.transformToUppercase",
+        "key": "ctrl+k ctrl+u",
+        "mac": "cmd+k cmd+u",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "editor.action.transformToLowercase",
+        "key": "ctrl+k ctrl+l",
+        "mac": "cmd+k cmd+l",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "deleteAllRight",
+        "key": "ctrl+k ctrl+k",
+        "mac": "cmd+k cmd+k",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "command": "deleteAllLeft",
+        "key": "ctrl+k ctrl+backspace",
+        "mac": "cmd+k cmd+backspace",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+k ctrl+b",
+        "mac": "cmd+k cmd+b"
+      },
+      {
+        "command": "workbench.action.openRecent",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+ctrl+p"
+      },
+      {
+        "command": "workbench.action.editorLayoutSingle",
+        "key": "alt+shift+1",
+        "mac": "cmd+alt+1"
+      },
+      {
+        "command": "workbench.action.editorLayoutTwoColumns",
+        "key": "alt+shift+2",
+        "mac": "cmd+alt+2"
+      },
+      {
+        "command": "workbench.action.editorLayoutThreeColumns",
+        "key": "alt+shift+3",
+        "mac": "cmd+alt+3"
       }
     ],
     "configurationDefaults": {
+      "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+      "editor.fontLigatures": true,
+      "terminal.integrated.fontFamily": "'Fira Code', Menlo, monospace",
       "editor.cursorStyle": "line",
       "editor.cursorWidth": 2,
       "editor.cursorBlinking": "expand",

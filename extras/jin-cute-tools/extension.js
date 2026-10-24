@@ -1,4 +1,5 @@
-// Jin Cute's one command: a Sublime Text style "Goto Symbol" (Cmd+R) that lists only functions and methods.
+// Jin Cute Tools commands.
+// Cmd+R: a Sublime Text style "Goto Symbol" that lists only functions and methods.
 // Typing filters the list, moving through it previews each function in the editor,
 // Enter jumps there, and Escape returns to where you were.
 const vscode = require('vscode');
@@ -85,8 +86,24 @@ async function goToFunction() {
   picker.show();
 }
 
+// Cmd+I: jump to the implementation when the language can find one, otherwise to the definition.
+// Many languages (Python with Pylance, plain JSON, CSS, ...) have no implementation provider at all.
+async function goToImplementation() {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) return;
+  const implementations = await vscode.commands
+    .executeCommand('vscode.executeImplementationProvider', editor.document.uri, editor.selection.active)
+    .then((result) => result || [], () => []);
+  await vscode.commands.executeCommand(
+    implementations.length > 0 ? 'editor.action.goToImplementation' : 'editor.action.revealDefinition'
+  );
+}
+
 function activate(context) {
-  context.subscriptions.push(vscode.commands.registerCommand('jinCute.goToFunction', goToFunction));
+  context.subscriptions.push(
+    vscode.commands.registerCommand('jinCute.goToFunction', goToFunction),
+    vscode.commands.registerCommand('jinCute.goToImplementation', goToImplementation)
+  );
 }
 
 module.exports = { activate, deactivate() {}, collectFunctions };
