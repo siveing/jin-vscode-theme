@@ -43,6 +43,7 @@ The screenshots use [Fira Code](https://github.com/tonsky/FiraCode) with ligatur
   "editor.smoothScrolling": true,
   "editor.renderWhitespace": "boundary",
   "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": "active",
   "editor.bracketPairColorization.enabled": true
 }
 ```

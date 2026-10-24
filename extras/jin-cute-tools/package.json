@@ -173,6 +173,7 @@
       "editor.guides.indentation": true,
       "editor.guides.highlightActiveIndentation": true,
       "editor.guides.bracketPairs": "active",
+      "editor.guides.bracketPairsHorizontal": "active",
       "editor.bracketPairColorization.enabled": true,
       "workbench.list.smoothScrolling": true,
       "terminal.integrated.smoothScrolling": true,
