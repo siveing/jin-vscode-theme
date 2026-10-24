@@ -485,7 +485,7 @@ function tokenColors(p) {
     rule('Decorators & macros', ['meta.decorator entity.name.function', 'entity.name.function.decorator', 'punctuation.decorator', 'punctuation.definition.decorator', 'storage.type.annotation', 'entity.name.function.macro', 'entity.name.function.preprocessor'], s.decorator),
 
     rule('Variables', ['variable', 'variable.other', 'variable.other.readwrite', 'meta.definition.variable'], s.variable),
-    rule('Parameters', ['variable.parameter', 'meta.parameters variable.other'], s.parameter),
+    rule('Parameters', ['variable.parameter', 'meta.parameters variable.other'], s.parameter, 'italic'),
     rule('this / self', ['variable.language', 'variable.parameter.function.language.special.self', 'variable.parameter.function.language.special.cls'], s.language, 'italic'),
     rule('Properties & keys', ['variable.other.property', 'variable.other.object.property', 'support.variable.property', 'meta.object-literal.key', 'support.type.property-name', 'entity.name.tag.yaml', 'variable.other.member'], s.property),
 
@@ -528,7 +528,7 @@ function semanticTokenColors(p) {
     decorator: s.decorator,
     variable: s.variable,
     'variable.readonly': s.variable, // keeps every `const` from turning into a constant color
-    parameter: s.parameter,
+    parameter: { foreground: s.parameter, italic: true },
     property: s.property,
     enumMember: s.constant,
     selfParameter: { foreground: s.language, italic: true },

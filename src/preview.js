@@ -247,7 +247,7 @@ main { display: flex; flex-direction: column; min-width: 0; }
 .ws { color: var(--editorWhitespace-foreground); }
 .ws.guide { box-shadow: inset 1px 0 0 var(--editorIndentGuide-background1); }
 .ws.guide.active { box-shadow: inset 1px 0 0 var(--editorIndentGuide-activeBackground1); }
-.t-comment, .t-language { font-style: italic; }
+.t-comment, .t-language, .t-parameter { font-style: italic; }
 ${roleCss}
 .panel { border-top: 1px solid var(--panel-border); background: var(--panel-background); }
 .ptabs { display: flex; gap: 18px; padding: 6px 16px 0; font-size: 11px; color: var(--panelTitle-inactiveForeground); }

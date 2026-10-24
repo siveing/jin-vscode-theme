@@ -376,7 +376,7 @@
         "variable.other.jsdoc"
       ],
       "settings": {
-        "foreground": "#9c3d9e",
+        "foreground": "#a03ab8",
         "fontStyle": "italic"
       }
     },
@@ -441,7 +441,7 @@
         "meta.require"
       ],
       "settings": {
-        "foreground": "#6a3fc0"
+        "foreground": "#1f5fbf"
       }
     },
     {
@@ -565,7 +565,7 @@
         "entity.name.function.preprocessor"
       ],
       "settings": {
-        "foreground": "#9c3d9e"
+        "foreground": "#6a3fc0"
       }
     },
     {
@@ -587,7 +587,8 @@
         "meta.parameters variable.other"
       ],
       "settings": {
-        "foreground": "#9c3d9e"
+        "foreground": "#a03ab8",
+        "fontStyle": "italic"
       }
     },
     {
@@ -614,7 +615,7 @@
         "variable.other.member"
       ],
       "settings": {
-        "foreground": "#34608c"
+        "foreground": "#0e7490"
       }
     },
     {
@@ -642,7 +643,7 @@
         "entity.other.attribute-name"
       ],
       "settings": {
-        "foreground": "#6a3fc0"
+        "foreground": "#1f5fbf"
       }
     },
     {
@@ -653,7 +654,7 @@
         "punctuation.definition.heading.markdown"
       ],
       "settings": {
-        "foreground": "#6a3fc0",
+        "foreground": "#1f5fbf",
         "fontStyle": "bold"
       }
     },
@@ -691,7 +692,7 @@
         "string.other.link"
       ],
       "settings": {
-        "foreground": "#34608c"
+        "foreground": "#0e7490"
       }
     },
     {
@@ -774,15 +775,18 @@
     "struct": "#1c7465",
     "typeParameter": "#1c7465",
     "class.defaultLibrary": "#1c7465",
-    "function": "#6a3fc0",
-    "method": "#6a3fc0",
-    "function.defaultLibrary": "#6a3fc0",
-    "macro": "#9c3d9e",
-    "decorator": "#9c3d9e",
+    "function": "#1f5fbf",
+    "method": "#1f5fbf",
+    "function.defaultLibrary": "#1f5fbf",
+    "macro": "#6a3fc0",
+    "decorator": "#6a3fc0",
     "variable": "#3b2530",
     "variable.readonly": "#3b2530",
-    "parameter": "#9c3d9e",
-    "property": "#34608c",
+    "parameter": {
+      "foreground": "#a03ab8",
+      "italic": true
+    },
+    "property": "#0e7490",
     "enumMember": "#b8323c",
     "selfParameter": {
       "foreground": "#c41a5c",
