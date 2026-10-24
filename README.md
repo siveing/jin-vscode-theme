@@ -12,7 +12,7 @@ A cute pink color theme for VS Code, in two flavors:
 ## Highlights
 
 - **Black, not brown or blue-gray.** The dark editor is `#131315`, and the title and activity bars are a deeper `#09090a`.
-- **Pink where it counts.** The active tab, activity bar, selections, badges, status bar, cursor and keywords are pink. Functions stay amber, strings green, types teal and properties blue, so code is easy to scan.
+- **Pink where it counts.** The active tab, activity bar, selections, badges, status bar, cursor and keywords are pink. Functions are violet, strings green, types teal and properties blue, so code is easy to scan, with no brown or orange anywhere in your code.
 - **Readable.** Every code color meets a 4.5:1 contrast ratio against the editor background, and comments meet at least 3.5:1.
 - **Complete.** Covers the whole workbench, the integrated terminal's 16 colors, git decorations, diff and merge views, bracket pair colors and semantic highlighting from language servers (TypeScript, Python, Rust and more).
 
@@ -60,11 +60,12 @@ VS Code themes can only change colors. If you'd like rounded tabs, pill-shaped f
 | Text | `#e6e0e3` | `#3b2530` |
 | Accent (pink) | `#ff8fc8` | `#c4367a` |
 | Cursor and control flow (hot pink) | `#ff6fa8` | `#c41a5c` |
-| Functions | `#f5b450` (amber) | `#6a3fc0` (violet) |
-| Strings (green) | `#b5d07c` | `#2e7d32` |
+| Functions (violet) | `#b49cff` | `#6a3fc0` |
+| Parameters (orchid / plum) | `#e2a8f5` | `#9c3d9e` |
+| Strings (green) | `#a6e3a1` | `#2e7d32` |
 | Types (teal) | `#7fd1c0` | `#1c7465` |
 | Properties (blue) | `#8fb8e8` | `#34608c` |
-| Numbers and constants | `#c3a2f5` (lavender) | `#b8323c` (crimson) |
+| Numbers and constants (coral / crimson) | `#f2707a` | `#b8323c` |
 
 ## Feedback
 

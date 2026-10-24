@@ -195,7 +195,7 @@ function workbenchColors(p) {
     'editorBracketMatch.background': alpha(pink, 0.14),
     'editorBracketMatch.border': alpha(pink, 0.7),
     'editorBracketHighlight.foreground1': h.pink,
-    'editorBracketHighlight.foreground2': h.amber,
+    'editorBracketHighlight.foreground2': h.violet,
     'editorBracketHighlight.foreground3': h.teal,
     'editorBracketHighlight.foreground4': h.purple,
     'editorBracketHighlight.foreground5': h.blue,
