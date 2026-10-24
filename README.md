@@ -60,11 +60,11 @@ VS Code themes can only change colors. If you'd like rounded tabs, pill-shaped f
 | Text | `#e6e0e3` | `#3b2530` |
 | Accent (pink) | `#ff8fc8` | `#c4367a` |
 | Cursor and control flow (hot pink) | `#ff6fa8` | `#c41a5c` |
-| Functions (amber) | `#f5b450` | `#975b00` |
-| Strings (green) | `#b5d07c` | `#527118` |
+| Functions | `#f5b450` (amber) | `#6a3fc0` (violet) |
+| Strings (green) | `#b5d07c` | `#2e7d32` |
 | Types (teal) | `#7fd1c0` | `#1c7465` |
 | Properties (blue) | `#8fb8e8` | `#34608c` |
-| Numbers and constants (lavender) | `#c3a2f5` | `#7345ad` |
+| Numbers and constants | `#c3a2f5` (lavender) | `#b8323c` (crimson) |
 
 ## Feedback
 

@@ -61,7 +61,7 @@ function workbenchColors(p) {
   const activeItem = alpha(accent, isDark ? 0.16 : 0.18);
   const widget = isDark ? ui.bg3 : mix(ui.bg2, '#ffffff', 0.5);
   const input = isDark ? ui.bg2 : mix(ui.bg2, '#ffffff', 0.7);
-  const bright = (c) => mix(c, ui.fg0, 0.25);
+  const bright = (c) => (isDark ? mix(c, ui.fg0, 0.25) : c);
 
   return {
     // Base
@@ -77,7 +77,7 @@ function workbenchColors(p) {
     'sash.hoverBorder': accent,
     'textLink.foreground': h.pink,
     'textLink.activeForeground': pink,
-    'textPreformat.foreground': h.amber,
+    'textPreformat.foreground': h.pink,
     'textPreformat.background': alpha(ui.bg4, 0.5),
     'textBlockQuote.background': ui.bg1,
     'textBlockQuote.border': accent,
