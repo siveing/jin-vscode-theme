@@ -1,0 +1,59 @@
+/*
+ * Jin Cute: rounded corners for VS Code's UI.
+ * Themes can only set colors, so this file has to be loaded by a custom CSS loader
+ * extension (see "Rounded tabs and files" in README.md).
+ * Change --jc-radius-* to make everything rounder or flatter.
+ */
+
+.monaco-workbench {
+  --jc-radius-tab: 12px;
+  --jc-radius-row: 10px;
+  --jc-radius-popup: 14px;
+  --jc-radius-control: 8px;
+}
+
+/* Editor tabs: big rounded top corners. */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab {
+  border-radius: var(--jc-radius-tab) var(--jc-radius-tab) 0 0;
+  overflow: hidden;
+}
+
+/* Selected, focused and hovered files in the explorer and other tree lists: nearly pill shaped. */
+.monaco-workbench .monaco-list .monaco-list-row.selected,
+.monaco-workbench .monaco-list .monaco-list-row.focused,
+.monaco-workbench .monaco-list .monaco-list-row:hover {
+  border-radius: var(--jc-radius-row);
+}
+
+/* Popups: command palette, suggestions, hovers, menus, notifications. */
+.monaco-workbench .quick-input-widget,
+.monaco-editor .suggest-widget,
+.monaco-editor .suggest-details,
+.monaco-editor .monaco-hover,
+.monaco-workbench .monaco-hover,
+.monaco-workbench .context-view .monaco-menu,
+.monaco-workbench .notification-toast {
+  border-radius: var(--jc-radius-popup) !important;
+  overflow: hidden;
+}
+.monaco-editor .find-widget {
+  border-radius: 0 0 var(--jc-radius-popup) var(--jc-radius-popup);
+}
+.monaco-workbench .quick-input-list .monaco-list-row,
+.monaco-workbench .context-view .monaco-menu .action-item {
+  border-radius: var(--jc-radius-control);
+}
+
+/* Buttons, text inputs, dropdowns. */
+.monaco-workbench .monaco-button,
+.monaco-workbench .monaco-inputbox,
+.monaco-workbench .monaco-select-box {
+  border-radius: var(--jc-radius-control) !important;
+}
+
+/* Text selections and find matches in the editor. */
+.monaco-editor .selected-text,
+.monaco-editor .findMatch,
+.monaco-editor .currentFindMatch {
+  border-radius: 5px;
+}

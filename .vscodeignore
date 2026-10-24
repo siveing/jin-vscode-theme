@@ -1,0 +1,6 @@
+.vscode/**
+src/**
+samples/**
+preview.html
+*.vsix
+ui/**
