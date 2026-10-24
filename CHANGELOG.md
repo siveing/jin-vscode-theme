@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+- Screenshots now use Fira Code with ligatures.
+- Recommended settings add Fira Code and horizontal bracket pair guides (`editor.guides.bracketPairsHorizontal`), which draw a pink line from the cursor's block to its opening bracket.
+- Theme colors are unchanged from 0.1.0.
+
 ## 0.1.0
 
 First release.

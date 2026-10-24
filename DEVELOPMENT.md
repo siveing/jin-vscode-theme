@@ -47,7 +47,7 @@ To find out which scope a token uses, run **Developer: Inspect Editor Tokens and
 npm run install-theme
 ```
 
-This builds the theme, packages it as `jin-cute-theme.vsix` and installs it. Then run **Developer: Reload Window** in VS Code.
+This builds the theme, packages it as `jin-cute-theme-<version>.vsix` and installs it. Then run **Developer: Reload Window** in VS Code.
 
 The personal shortcuts and cursor settings are a separate extension:
 
@@ -107,5 +107,5 @@ Only the theme is published: `.vscodeignore` leaves out the source, samples, scr
 To also reach Cursor and VSCodium users, publish the same package to [Open VSX](https://open-vsx.org):
 
 ```bash
-npx ovsx publish jin-cute-theme.vsix -p YOUR-OPEN-VSX-TOKEN
+npx ovsx publish jin-cute-theme-<version>.vsix -p YOUR-OPEN-VSX-TOKEN
 ```
