@@ -1,6 +1,11 @@
 .vscode/**
+.github/**
 src/**
 samples/**
-preview.html
-*.vsix
+extras/**
 ui/**
+images/**
+preview.html
+DEVELOPMENT.md
+*.vsix
+.gitignore

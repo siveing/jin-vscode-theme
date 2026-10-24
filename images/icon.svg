@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1c1f"/>
+      <stop offset="1" stop-color="#09090a"/>
+    </linearGradient>
+    <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffa6d4"/>
+      <stop offset="1" stop-color="#ff5f9e"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="60" fill="url(#bg)"/>
+  <rect x="8.75" y="8.75" width="238.5" height="238.5" rx="59.25" fill="none" stroke="#ff8fc8" stroke-opacity=".35" stroke-width="1.5"/>
+  <!-- heart -->
+  <path d="M128 206 C 66 166, 42 130, 42 98 C 42 70, 63 52, 88 52 C 106 52, 120 62, 128 77 C 136 62, 150 52, 168 52 C 193 52, 214 70, 214 98 C 214 130, 190 166, 128 206 Z" fill="url(#heart)"/>
+  <!-- face -->
+  <circle cx="104" cy="112" r="9" fill="#131315"/>
+  <circle cx="152" cy="112" r="9" fill="#131315"/>
+  <circle cx="107" cy="109" r="3" fill="#ffffff"/>
+  <circle cx="155" cy="109" r="3" fill="#ffffff"/>
+  <ellipse cx="88" cy="132" rx="10" ry="6" fill="#ffffff" fill-opacity=".35"/>
+  <ellipse cx="168" cy="132" rx="10" ry="6" fill="#ffffff" fill-opacity=".35"/>
+  <path d="M116 130 Q128 142 140 130" fill="none" stroke="#131315" stroke-width="5" stroke-linecap="round"/>
+  <!-- sparkle -->
+  <path d="M204 40 L209 55 L224 60 L209 65 L204 80 L199 65 L184 60 L199 55 Z" fill="#f5b450"/>
+  <circle cx="54" cy="200" r="5" fill="#f5b450" fill-opacity=".8"/>
+</svg>

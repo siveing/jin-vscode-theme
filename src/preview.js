@@ -134,7 +134,7 @@ function windowHtml(theme, variant) {
     .join('');
 
   return `
-<section class="theme">
+<section class="theme" data-key="${variant.type}">
   <h2>${esc(theme.name)}</h2>
   <div class="win" style="${style}">
     <header class="titlebar"><span class="dots"><i></i><i></i><i></i></span><span class="cc">jin-cute-theme</span><span></span></header>
@@ -266,6 +266,17 @@ ${roleCss}
 .chips i { width: 14px; height: 14px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
 .chips b { color: var(--ink); font-weight: 500; }
 .chips code { font-size: 11px; }
+/* preview.html#dark or #light: one full-window theme, used for README screenshots. */
+body.shot { background: transparent; }
+.shot .page { max-width: none; padding: 0; }
+.shot .page > header, .shot .theme h2, .shot .chips { display: none; }
+.shot .theme { margin: 0; }
+.shot .win { display: flex; flex-direction: column; height: 100vh; border: 0; border-radius: 0; box-shadow: none; }
+.shot .body { flex: 1; min-height: 0; }
+.shot .editor { flex: 1; }
+/* Screenshots show the theme alone, without the optional rounded corners from ui/rounded.css. */
+.shot .tab, .shot .sidebar li.sel { border-radius: 0; margin: 0; }
+.shot .sidebar li.sel { padding-left: 36px; }
 @media (max-width: 760px) {
   .body { grid-template-columns: minmax(0, 1fr); }
   .activity, .sidebar { display: none; }
@@ -281,6 +292,13 @@ ${roleCss}
   </header>
   ${windows}
 </div>
+<script>
+  const only = location.hash.slice(1);
+  if (only) {
+    document.body.classList.add('shot');
+    document.querySelectorAll('.theme').forEach((s) => s.dataset.key !== only && s.remove());
+  }
+</script>
 </body>
 </html>
 `;

@@ -1,114 +1,72 @@
 # Jin Cute Theme
 
-A cute pink color theme for VS Code: **Jin Cute Dark** (true black) and **Jin Cute Light** (soft blush).
-Every color comes from one file, `src/palette.js`.
+A cute pink color theme for VS Code, in two flavors:
 
-## Project layout
+- **Jin Cute Dark**: true black backgrounds with pink accents
+- **Jin Cute Light**: a soft blush background with deeper pinks
 
-| Path | What it is |
-| --- | --- |
-| `src/palette.js` | **Edit this.** Backgrounds, text colors, accent, hues and syntax roles for both variants. |
-| `src/build.js` | Turns the palette into full theme files and checks text contrast. |
-| `src/preview.js` | Writes `preview.html`, a quick mock-up of both variants. |
-| `themes/*.json` | Generated theme files. Don't edit them by hand, because the next build overwrites them. |
-| `samples/` | TypeScript, Python and Markdown files for checking syntax colors. |
+![Jin Cute Dark](images/dark.png)
 
-## Customize
+![Jin Cute Light](images/light.png)
 
-1. Change colors in `src/palette.js`:
-   - `ui.bg0`–`bg4`: backgrounds, from the most recessed (title bar) to the most raised (selections).
-   - `ui.fg0`–`fg4`: text, from brightest to faintest.
-   - `accent`: cursor, focus rings, active tab, buttons, badges.
-   - `syntax`: which color each kind of code gets, for example `keyword: darkHues.red`.
-2. Rebuild:
+## Highlights
 
-   ```bash
-   npm run build
-   ```
+- **Black, not brown or blue-gray.** The dark editor is `#131315`, and the title and activity bars are a deeper `#09090a`.
+- **Pink where it counts.** The active tab, activity bar, selections, badges, status bar, cursor and keywords are pink. Functions stay amber, strings green, types teal and properties blue, so code is easy to scan.
+- **Readable.** Every code color meets a 4.5:1 contrast ratio against the editor background, and comments meet at least 3.5:1.
+- **Complete.** Covers the whole workbench, the integrated terminal's 16 colors, git decorations, diff and merge views, bracket pair colors and semantic highlighting from language servers (TypeScript, Python, Rust and more).
 
-   The build prints a contrast check, so you know if a color became hard to read on the editor background.
-3. Open `preview.html` in a browser for a quick look.
+## Install
 
-## Pink accents, cursor animation and dotted indentation
+1. Open the Extensions view (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows/Linux).
+2. Search for **Jin Cute Theme** and click **Install**.
+3. Open the Command Palette (Cmd+Shift+P / Ctrl+Shift+P), run **Preferences: Color Theme**, and pick **Jin Cute Dark** or **Jin Cute Light**.
 
-Pink is the main accent (`accent` in the palette). It colors the active tab, the activity bar, buttons, badges, the status bar, selections, links, keywords and HTML tags. A stronger hot pink (`pink` in the palette) is used for the text cursor, the active line number, the matching-bracket box, bracket guide lines, the active indent guide, the indentation dots and control-flow words like `import`, `return` and `await`. Function names stay amber, so code doesn't become all one color.
+Or install from the command line:
 
-The extension also sets these editor defaults in `package.json` → `contributes.configurationDefaults`:
+```bash
+code --install-extension siveing.jin-cute-theme
+```
 
-| Setting | Effect |
-| --- | --- |
-| `editor.cursorStyle: "line"`, `cursorWidth: 2` | Thin line cursor |
-| `editor.cursorSmoothCaretAnimation: "on"` | The cursor glides to its new position instead of jumping |
-| `editor.cursorBlinking: "expand"` | The cursor pulses (shrinks and grows) as it blinks |
-| `editor.smoothScrolling`, `workbench.list.smoothScrolling` | Animated scrolling |
-| `editor.renderWhitespace: "boundary"` | Indentation shows as faint `·` dots and tabs as `→` arrows |
-| `editor.guides.bracketPairs: "active"` | A pink line joins the brackets around the cursor |
+## Recommended settings (optional)
 
-These apply while the extension is installed, whichever theme is active. Anything you set in your own settings wins. VS Code always draws indent guides as solid lines and the mouse pointer belongs to the operating system, so a theme can't change either one.
+The theme is designed for a thin pink line cursor that glides and pulses, faint dots in the indentation, and a pink line joining the brackets around the cursor. To get that look, add these to your `settings.json`:
 
-## Sublime Text style shortcuts
+```json
+{
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true
+}
+```
 
-| Mac | Windows/Linux | What it does |
+## Rounded corners (optional)
+
+VS Code themes can only change colors. If you'd like rounded tabs, pill-shaped file selections and rounder popups, there's a companion stylesheet, [`ui/rounded.css`](https://github.com/siveing/jin-vscode-theme/blob/HEAD/ui/rounded.css), that you can load with the [Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) extension. The loader edits VS Code's own files, so VS Code will show an "installation appears to be corrupt" notice, and you'll need to reload the CSS after each VS Code update. Setup steps are in [DEVELOPMENT.md](https://github.com/siveing/jin-vscode-theme/blob/HEAD/DEVELOPMENT.md#rounded-corners).
+
+## Palette
+
+| Role | Dark | Light |
 | --- | --- | --- |
-| Cmd+R | Ctrl+R | **Go to Function**: lists only the functions, methods and constructors in the current file. Type to filter, use ↑/↓ to preview each one in the editor, press Enter to jump there, or press Esc to go back to where you were. |
-| Cmd+I | Ctrl+I | **Go to Implementation**: jumps to where the interface, abstract method or function under the cursor is implemented, and opens a peek list if there are several. |
+| Editor background | `#131315` | `#fff8f9` |
+| Text | `#e6e0e3` | `#3b2530` |
+| Accent (pink) | `#ff8fc8` | `#c4367a` |
+| Cursor and control flow (hot pink) | `#ff6fa8` | `#c41a5c` |
+| Functions (amber) | `#f5b450` | `#975b00` |
+| Strings (green) | `#b5d07c` | `#527118` |
+| Types (teal) | `#7fd1c0` | `#1c7465` |
+| Properties (blue) | `#8fb8e8` | `#34608c` |
+| Numbers and constants (lavender) | `#c3a2f5` | `#7345ad` |
 
-Notes:
-- Go to Function lists what the language's extension reports as a function or method. In TypeScript and JavaScript, an arrow function stored in a `const` counts as a variable, so it isn't listed.
-- These shortcuts replace VS Code's defaults for the same keys while the extension is installed (on Mac, Cmd+I normally starts inline chat). To change them, open **Preferences: Open Keyboard Shortcuts** and search for `jinCute.goToFunction` or `editor.action.goToImplementation`.
-- The command is in the Command Palette as **Jin Cute: Go to Function in File**. The code is in `extension.js`.
+## Feedback
 
-## Rounded tabs and files (optional)
+Found a color that's hard to read, or a language that doesn't look right? [Open an issue](https://github.com/siveing/jin-vscode-theme/issues). A screenshot and the output of **Developer: Inspect Editor Tokens and Scopes** help a lot.
 
-VS Code themes can only set colors, so the rounded corners live in a separate stylesheet, `ui/rounded.css`. It rounds:
-- the top corners of editor tabs (12px)
-- the selected, focused and hovered rows in the explorer, almost into pills (10px)
-- the command palette, suggestions, hovers, menus and notifications (14px)
-- buttons, inputs and dropdowns (8px), and text selections in the editor
+## License
 
-To make things rounder or flatter, change the `--jc-radius-*` values at the top of the file.
-
-To turn it on, use the **Custom CSS and JS Loader** extension (`be5invis.vscode-custom-css`):
-
-1. Install it from the Extensions view.
-2. Open your user `settings.json` (**Preferences: Open User Settings (JSON)**) and add the full path to the stylesheet:
-
-   ```json
-   "vscode_custom_css.imports": ["file:///FULL/PATH/TO/jin-cute-theme/ui/rounded.css"]
-   ```
-
-3. Run **Enable Custom CSS and JS** from the Command Palette, then restart VS Code.
-
-Things to know:
-- The loader works by editing VS Code's own files. VS Code will then say the installation "appears to be corrupt". That's expected; choose **Don't Show Again**.
-- After every VS Code update, run **Reload Custom CSS and JS** again.
-- To undo it, run **Disable Custom CSS and JS** and restart.
-- Keep this project in a permanent folder, because the setting points at the file's path.
-- These rules rely on VS Code's internal class names, so an update can occasionally break one. Colors are unaffected either way.
-
-## Preview it in VS Code
-
-1. Open this folder in VS Code.
-2. Press **F5**. A second window (the Extension Development Host) opens with the `samples` folder.
-3. In that window, open the Command Palette (Cmd+Shift+P), run **Preferences: Color Theme**, and pick **Jin Cute Dark** or **Jin Cute Light**.
-4. In the first window's terminal, run `npm run watch`. Each time you save `palette.js`, the theme rebuilds and the preview window updates right away.
-
-To find out which scope a token uses, run **Developer: Inspect Editor Tokens and Scopes** in the preview window and click on the code.
-
-## Install it for everyday use
-
-```bash
-npm run install-theme
-```
-
-This builds the theme, packages it as `jin-cute-theme-0.1.0.vsix` (it uses `npx` to fetch `@vscode/vsce`), and installs it with `code --install-extension`. Run it again after any change, then choose the theme in **Preferences: Color Theme**.
-
-To uninstall it:
-
-```bash
-code --uninstall-extension local.jin-cute-theme
-```
-
-## Publish (optional)
-
-To share the theme on the Marketplace, change `publisher` in `package.json` to your own publisher ID, add a `repository`, `LICENSE` and icon, then follow the [publishing guide](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+[MIT](https://github.com/siveing/jin-vscode-theme/blob/HEAD/LICENSE)
